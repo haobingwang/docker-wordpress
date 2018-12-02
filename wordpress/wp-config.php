@@ -55,6 +55,12 @@ define('SECURE_AUTH_SALT', '2b50bfea57a6d89f9178e59ecaef8cfe39457652');
 define('LOGGED_IN_SALT',   '807e891a654bc83b04b995767a1833f2afc437b8');
 define('NONCE_SALT',       '8a94dc9fd6dcd57d2683eb552203cd5107e65cb8');
 
+/**
+ * JWT Authentication for the WP REST API 配置
+ */
+define('JWT_AUTH_SECRET_KEY', 'Oa|O Ap.}7~e*G?|[Y)h4d4pM(ak,.lb9v/[96');
+define('JWT_AUTH_CORS_ENABLE', true);
+
 /**#@-*/
 
 /**

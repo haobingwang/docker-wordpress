@@ -51,3 +51,25 @@ volumes:
 这里要在本地目录前追加 `${PWD}/`，否则会报错：Named volume "wordpress/wp-content:/var/www/html/wp-content:rw" is used in service "wordpress" but no declaration was found in the volumes section.
 
 The `working_dir` tells the WordPress image to install WordPress in that directory. volumes: behaves like `-v "$PWD/wordpress":/var/www/html/wp-content`. The WordPress files live under `/var/www/html` folder. We’re really only interested in the wp-content folder, since that’s where our plugins and themes reside. After all, most developers only deal with this folder.
+
+## 安装插件：JWT Authentication for the WP REST API
+
+文档：https://github.com/Tmeister/wp-api-jwt-auth
+
+When the plugin is activated, a new namespace is added.
+
+
+```
+/jwt-auth/v1
+```
+
+
+Also, two new endpoints are added to this namespace.
+
+
+| Endpoint                              | HTTP Verb |
+| ------------------------------------- | --------- |
+| */wp-json/jwt-auth/v1/token*          | POST      |
+| */wp-json/jwt-auth/v1/token/validate* | POST      |
+
+token 类型为 Bearer

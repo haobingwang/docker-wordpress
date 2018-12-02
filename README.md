@@ -1,6 +1,16 @@
 # Docker-WordPress
 
-docker-compose.yml 从 https://docs.docker.com/compose/ 获取
+## 初次部署
+
+修改 wordpress/wp-config.php 中配置，可以从 https://api.wordpress.org/secret-key/1.1/salt/ 拷贝一份，并且更新：
+
+```php
+define('JWT_AUTH_SECRET_KEY', '填入新值');
+```
+
+## 起步
+
+>docker-compose.yml 从 https://docs.docker.com/compose/ 获取
 
 启动：
 
